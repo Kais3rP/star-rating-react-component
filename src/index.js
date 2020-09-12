@@ -35,13 +35,11 @@ export default function StarRating({ options, handleScore }) {
 
 
   const handleMouseMove = (ev) => {
-
-    
-      ev.pageX <
+    ev.pageX <
       ev.currentTarget.getBoundingClientRect().x +
       ev.currentTarget.getBoundingClientRect().width / 2
-     ? ev.currentTarget.style.fill = `url(#${name})`
-     : ev.currentTarget.style.fill = color;
+      ? ev.currentTarget.style.fill = `url(#${name})`
+      : ev.currentTarget.style.fill = color;
 
     setCurrentStar(ev.currentTarget.dataset.current)
   }
@@ -80,7 +78,7 @@ export default function StarRating({ options, handleScore }) {
         if (i <= currentStar)
           return <SVGStar key={i} identifier={i} color={color} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
         if (i > currentStar)
-          return <SVGStar  key={i} identifier={i} color={bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
+          return <SVGStar key={i} identifier={i} color={bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
       })}
 
       <div style={{ 'fontFamily': 'Arial', 'fontSize': '15px', 'color': scoreColor }}>Rating: {currentScore}</div>
