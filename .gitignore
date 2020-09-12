@@ -1,2 +1,11 @@
-
+# gitignore files
 node_modules
+# 
+#
+# npmignore files
+# src
+# demo
+# .babelrc
+# webpack.config.js
+# node_modules
+# logo
