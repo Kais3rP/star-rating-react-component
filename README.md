@@ -156,7 +156,7 @@ As props, it also accepts an handleScore callback:
 ```return ( <Star options={options} handleScore={handleScore}/> )```<br>
 ```}```
 
-This let's use the score selected onClick, as you prefer.
+This lets you use the score selected onClick, as you prefer.
 
 ### Demo Link : [https://codepen.io/kais3rp/pen/NWNMgBX)
 
