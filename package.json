@@ -1,0 +1,33 @@
+{
+  "name": "star-rating-react-component",
+  "version": "1.0.4",
+  "description": "React Star Rating Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "build": "npx webpack"
+  },
+  "keywords": [
+    "react",
+    "star",
+    "rating"
+  ],
+  "author": "Cesare Polonara",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.11.2",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.8.1",
+    "eslint-loader": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
