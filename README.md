@@ -189,7 +189,7 @@ This is necessary to give unique id's to each Component in order to avoid incons
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/Kais3rP/create-star-ratings/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Kais3rP/star-rating-react-component/issues) for a list of proposed features (and known issues).
 
 
 <!-- LICENSE -->

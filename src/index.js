@@ -22,34 +22,26 @@ export default function StarRating({ options, handleScore }) {
   const [currentStar, setCurrentStar] = useState(-1);
   const [currentScore, setCurrentScore] = useState(0);
 
-  let arrOfStars = [];
-  let name = options.name;
-  let numOfStars = options.numOfStars;
-  let starsWidth = options.starsWidth;
-  let color = options.color;
-  let bgColor = options.bgColor;
-  let borderColor = options.borderColor;
-  let scoreColor = options.scoreColor;
+  const arrOfStars = [];
+  const name = options.name;
+  const numOfStars = options.numOfStars;
+  const starsWidth = options.starsWidth;
+  const color = options.color;
+  const bgColor = options.bgColor;
+  const borderColor = options.borderColor;
+  const scoreColor = options.scoreColor;
   for (let i = 0; i < numOfStars; i++)
     arrOfStars.push(i);
 
 
   const handleMouseMove = (ev) => {
 
-    if (
+    
       ev.pageX <
       ev.currentTarget.getBoundingClientRect().x +
       ev.currentTarget.getBoundingClientRect().width / 2
-    ) {
-
-      ev.currentTarget.style.fill = `url(#${name})`;
-    }
-    else
-      if (
-        ev.pageX >=
-        ev.currentTarget.getBoundingClientRect().x +
-        ev.currentTarget.getBoundingClientRect().width / 2
-      ) ev.currentTarget.style.fill = color;
+     ? ev.currentTarget.style.fill = `url(#${name})`
+     : ev.currentTarget.style.fill = color;
 
     setCurrentStar(ev.currentTarget.dataset.current)
   }

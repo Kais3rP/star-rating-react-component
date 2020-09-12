@@ -1,6 +1,6 @@
 {
   "name": "star-rating-react-component",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "React Star Rating Component",
   "main": "index.js",
   "scripts": {
