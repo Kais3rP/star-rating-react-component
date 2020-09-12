@@ -73,13 +73,9 @@ export default function StarRating({ options, handleScore }) {
           </linearGradient>
         </defs>
       </svg>
-      {arrOfStars.map((x, i) => {
-
-        if (i <= currentStar)
-          return <SVGStar key={i} identifier={i} color={color} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
-        if (i > currentStar)
-          return <SVGStar key={i} identifier={i} color={bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
-      })}
+      {arrOfStars.map((x, i) => i <= currentStar ? <SVGStar key={i} identifier={i} color={color} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
+                                                 : <SVGStar key={i} identifier={i} color={bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
+       )}
 
       <div style={{ 'fontFamily': 'Arial', 'fontSize': '15px', 'color': scoreColor }}>Rating: {currentScore}</div>
     </div>
