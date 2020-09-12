@@ -1,5 +1,5 @@
 
-/* eslint-disable no-unused-expressions */
+
 import React, { useState } from 'react';
 import { SVGStar } from './SVGStar';
 
