@@ -12,7 +12,11 @@
 <br />
 <p align="center">
   <a href="https://github.com/Kais3rP/star-rating-react-component">
-    <img src="logo/Star_.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Kais3rP/star-rating-react-component/master/logo/Star_.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Kais3rP/star-rating-react-component/master/logo/Star_.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Kais3rP/star-rating-react-component/master/logo/Star_.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Kais3rP/star-rating-react-component/master/logo/Star_.svg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Kais3rP/star-rating-react-component/master/logo/Star_.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Custom Star Rating System</h3>
@@ -53,6 +57,7 @@
 This is a Star Rating System Component for React that renders a Star Rating graphical interface.
 The generator is highly customizable, and lets you choose everything, colors, size, number of stars, etc...
 More info on Usage in the proper Section.
+It weighs 4kB.
 
 ### Built With
 
