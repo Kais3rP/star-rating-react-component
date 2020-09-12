@@ -23,13 +23,15 @@ export default function StarRating({ options, handleScore }) {
   const [currentScore, setCurrentScore] = useState(0);
 
   const arrOfStars = [];
-  const name = options.name;
-  const numOfStars = options.numOfStars;
-  const starsWidth = options.starsWidth;
-  const color = options.color;
-  const bgColor = options.bgColor;
-  const borderColor = options.borderColor;
-  const scoreColor = options.scoreColor;
+  const { name, 
+    numOfStars,
+    starsWidth,
+    color,
+    bgColor,
+    borderColor,
+    scoreColor
+   } = options;
+   
   for (let i = 0; i < numOfStars; i++)
     arrOfStars.push(i);
 
