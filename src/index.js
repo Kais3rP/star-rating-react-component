@@ -37,11 +37,11 @@ export default function StarRating({ options, handleScore }) {
 
 
   const handleMouseMove = (ev) => {
-    ev.pageX <
+   ev.currentTarget.style.fill = ev.pageX <
       ev.currentTarget.getBoundingClientRect().x +
       ev.currentTarget.getBoundingClientRect().width / 2
-      ? ev.currentTarget.style.fill = `url(#${name})`
-      : ev.currentTarget.style.fill = color;
+      ? `url(#${name})`
+      : color;
 
     setCurrentStar(ev.currentTarget.dataset.current)
   }
@@ -51,35 +51,23 @@ export default function StarRating({ options, handleScore }) {
   }
 
   const handleClick = (ev) => {
-    if (
-      ev.pageX <
+   
+    let score = ev.pageX <
       ev.currentTarget.getBoundingClientRect().x +
-      ev.currentTarget.getBoundingClientRect().width / 2
-    ) {
-      setCurrentScore(parseInt(ev.currentTarget.dataset.current) + 0.5);
-      handleScore(parseInt(ev.currentTarget.dataset.current) + 0.5);
-    }
-    else {
-      setCurrentScore(parseInt(ev.currentTarget.dataset.current) + 1);
-      handleScore(parseInt(ev.currentTarget.dataset.current) + 1);
-    }
+      ev.currentTarget.getBoundingClientRect().width / 2 ? 0.5 : 1;
+    
+      setCurrentScore(parseInt(ev.currentTarget.dataset.current) + score);
+      handleScore(parseInt(ev.currentTarget.dataset.current) + score);
+  
   }
 
   return (
-    <div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width={0} height={0}>
-        <defs>
-          <linearGradient id={name} x1="0" x2="100%" y1="0" y2="0">
-            <stop offset="50%" stopColor={color} />
-            <stop offset="50%" stopColor={bgColor} />
-          </linearGradient>
-        </defs>
-      </svg>
-      {arrOfStars.map((x, i) => i <= currentStar ? <SVGStar key={i} identifier={i} color={color} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
-                                                 : <SVGStar key={i} identifier={i} color={bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleMouseOut={handleMouseOut} handleClick={handleClick} />
-       )}
-
-      <div style={{ 'fontFamily': 'Arial', 'fontSize': '15px', 'color': scoreColor }}>Rating: {currentScore}</div>
+    <div onMouseLeave={handleMouseOut}>
+      <Gradient name={name} color={color} bgColor={bgColor} />
+      {arrOfStars.map((x, i) => 
+        <SVGStar key={i} identifier={i} color={i <= currentStar ? color : bgColor} bgColor={bgColor} borderColor={borderColor} starsWidth={starsWidth} handleMouseMove={handleMouseMove} handleClick={handleClick} />
+ )}
+<div style={{ 'fontFamily': 'Arial', 'fontSize': '15px', 'color': scoreColor }}>Rating: {currentScore}</div>
     </div>
   )
 }
