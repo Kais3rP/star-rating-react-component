@@ -39,12 +39,11 @@ export default function StarRating({ options, handleScore }) {
 
   const handleMouseMove = (ev) => {
     setIsFullStar(
-      (
         ev.pageX <
         ev.currentTarget.getBoundingClientRect().x +
           ev.currentTarget.getBoundingClientRect().width / 2
           ? false
-          : true)
+          : true
     );
     setCurrentStar(parseInt(ev.currentTarget.dataset.current));
   };
