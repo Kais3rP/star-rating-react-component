@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export function SVGStar({ color, bgColor, borderColor, starsWidth, handleMouseMove, handleMouseOut, handleClick, identifier }) {
+export default function SVGStar({ color, bgColor, borderColor, starsWidth, handleMouseMove, handleMouseOut, handleClick, identifier }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width={starsWidth} style={{ 'fill': color, 'stroke': borderColor, 'strokeWidth': 20, 'cursor': 'pointer' }}
       onMouseMove={handleMouseMove} onMouseLeave={handleMouseOut} onClick={handleClick} data-current={identifier}>

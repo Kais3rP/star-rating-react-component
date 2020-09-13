@@ -1,4 +1,6 @@
-function Gradient({name, color, bgColor}){
+import React from 'react';
+
+export default function Gradient({name, color, bgColor}){
     return(
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width={0} height={0}>
         <defs>
