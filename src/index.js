@@ -12,7 +12,8 @@ let defaultProps = {
     color: "green",
     bgColor: "white",
     borderColor: "green",
-    scoreColor: "inherit"
+    scoreColor: "inherit",
+    showText:true
   },
   handleScore: (score) => { console.log(score) }
 }
@@ -32,7 +33,8 @@ export default function StarRating({ options, handleScore }) {
     color,
     bgColor,
     borderColor,
-    scoreColor
+    scoreColor,
+    showText
   } = options;
 
   for (let i = 1; i <= numOfStars; i++) arrOfStars.push(i);
@@ -85,9 +87,9 @@ export default function StarRating({ options, handleScore }) {
         );
       })}
 
-      <div style={{ fontFamily: "Arial", fontSize: "15px", color: scoreColor }}>
+      {showText ? (<div style={{ fontFamily: "Arial", fontSize: "15px", color: scoreColor }}>
         Rating: {currentScore}
-      </div>
+      </div>) : null}
     </div>
   );
 }
