@@ -27,7 +27,7 @@
     <a href="https://github.com/Kais3rP/star-rating-react-component"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://star-rating-react-component.netlify.app/" target="_blank">View Demo</a>
+    <a href="https://react-5aawuj.stackblitz.io" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/Kais3rP/star-rating-react-component">Report Bug</a>
     ·
