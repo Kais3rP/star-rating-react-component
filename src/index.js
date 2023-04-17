@@ -1,16 +1,25 @@
-import React, { useState } from "react";
-import SVGStar from "./SVGStar";
-import Gradient from "./Gradient";
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable radix */
+/* eslint-disable no-console */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-plusplus */
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+import Gradient from './Gradient';
+import SVGStar from './SVGStar';
 
-let defaultProps = {
+const defaultProps = {
   options: {
-    name: "half-grad",
+    name: 'half-grad',
     numOfStars: 5,
     starsWidth: 30,
-    color: "green",
-    bgColor: "white",
-    borderColor: "green",
-    scoreColor: "inherit",
+    color: 'green',
+    bgColor: 'white',
+    borderColor: 'green',
+    scoreColor: 'inherit',
     showText: true,
   },
   handleScore: (score) => {
@@ -39,22 +48,21 @@ export default function StarRating({ options, handleScore, ...props }) {
 
   const handleMouseMove = (ev) => {
     setIsFullStar(
-      ev.pageX <
-        ev.currentTarget.getBoundingClientRect().x +
-          ev.currentTarget.getBoundingClientRect().width / 2
-        ? false
-        : true
+      !(
+        ev.pageX
+        < ev.currentTarget.getBoundingClientRect().x
+          + ev.currentTarget.getBoundingClientRect().width / 2
+      ),
     );
     setCurrentStar(parseInt(ev.currentTarget.dataset.current));
   };
 
-  const handleMouseOut = (ev) => {
+  const handleMouseOut = () => {
     setCurrentStar(0);
   };
 
-  const handleClick = (ev) => {
-    let score = isFullStar ? currentStar : currentStar - 0.5;
-
+  const handleClick = () => {
+    const score = isFullStar ? currentStar : currentStar - 0.5;
     setCurrentScore(score);
     handleScore(score);
   };
@@ -62,34 +70,34 @@ export default function StarRating({ options, handleScore, ...props }) {
   return (
     <div onMouseLeave={handleMouseOut} {...props}>
       <Gradient name={name} color={color} bgColor={bgColor} />
-      {arrOfStars.map((x) => {
-        return (
-          <SVGStar
-            key={x}
-            identifier={x}
-            color={
-              x < currentStar
-                ? color
-                : x == currentStar
+      {arrOfStars.map((x) => (
+        <SVGStar
+          key={x}
+          identifier={x}
+          color={
+            x < currentStar
+              ? color
+              : x === currentStar
                 ? isFullStar
                   ? color
                   : `url(#${name})`
                 : bgColor
-            }
-            bgColor={bgColor}
-            borderColor={borderColor}
-            starsWidth={starsWidth}
-            handleMouseMove={handleMouseMove}
-            handleClick={handleClick}
-          />
-        );
-      })}
+          }
+          bgColor={bgColor}
+          borderColor={borderColor}
+          starsWidth={starsWidth}
+          handleMouseMove={handleMouseMove}
+          handleClick={handleClick}
+        />
+      ))}
 
       {showText ? (
         <div
-          style={{ fontFamily: "Arial", fontSize: "15px", color: scoreColor }}
+          style={{ fontFamily: 'Arial', fontSize: '15px', color: scoreColor }}
         >
-          Rating: {currentScore}
+          Rating:
+          {' '}
+          {currentScore}
         </div>
       ) : null}
     </div>
