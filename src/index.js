@@ -1,26 +1,24 @@
-
-
-import React, { useState } from 'react';
-import SVGStar from './SVGStar';
-import Gradient from './Gradient';
+import React, { useState } from "react";
+import SVGStar from "./SVGStar";
+import Gradient from "./Gradient";
 
 let defaultProps = {
   options: {
-    name: 'half-grad',
+    name: "half-grad",
     numOfStars: 5,
     starsWidth: 30,
     color: "green",
     bgColor: "white",
     borderColor: "green",
     scoreColor: "inherit",
-    showText:true
+    showText: true,
   },
-  handleScore: (score) => { console.log(score) }
-}
+  handleScore: (score) => {
+    console.log(score);
+  },
+};
 
-
-
-export default function StarRating({ options, handleScore }) {
+export default function StarRating({ options, handleScore, ...props }) {
   const [currentStar, setCurrentStar] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [isFullStar, setIsFullStar] = useState(false);
@@ -34,18 +32,18 @@ export default function StarRating({ options, handleScore }) {
     bgColor,
     borderColor,
     scoreColor,
-    showText
+    showText,
   } = options;
 
   for (let i = 1; i <= numOfStars; i++) arrOfStars.push(i);
 
   const handleMouseMove = (ev) => {
     setIsFullStar(
-        ev.pageX <
+      ev.pageX <
         ev.currentTarget.getBoundingClientRect().x +
           ev.currentTarget.getBoundingClientRect().width / 2
-          ? false
-          : true
+        ? false
+        : true
     );
     setCurrentStar(parseInt(ev.currentTarget.dataset.current));
   };
@@ -62,7 +60,7 @@ export default function StarRating({ options, handleScore }) {
   };
 
   return (
-    <div onMouseLeave={handleMouseOut}>
+    <div onMouseLeave={handleMouseOut} {...props}>
       <Gradient name={name} color={color} bgColor={bgColor} />
       {arrOfStars.map((x) => {
         return (
@@ -87,13 +85,15 @@ export default function StarRating({ options, handleScore }) {
         );
       })}
 
-      {showText ? (<div style={{ fontFamily: "Arial", fontSize: "15px", color: scoreColor }}>
-        Rating: {currentScore}
-      </div>) : null}
+      {showText ? (
+        <div
+          style={{ fontFamily: "Arial", fontSize: "15px", color: scoreColor }}
+        >
+          Rating: {currentScore}
+        </div>
+      ) : null}
     </div>
   );
 }
-
-
 
 StarRating.defaultProps = defaultProps;
