@@ -1,12 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable radix */
-/* eslint-disable no-console */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-plusplus */
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import Gradient from './Gradient';
 import SVGStar from './SVGStar';

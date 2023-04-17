@@ -7,8 +7,7 @@
         "plugin:react/recommended",
         "airbnb"
     ],
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -17,5 +16,14 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": "off",
+        "no-plusplus": "off",
+        "import/no-unresolved": "off",
+        "no-console": "off",
+        "radix": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": "off",
+        "no-nested-ternary": "off",
+        "react/jsx-props-no-spreading": "off"
     }
 }

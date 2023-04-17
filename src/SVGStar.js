@@ -16,7 +16,7 @@ export default function SVGStar({
         fill: color,
         stroke: borderColor,
         strokeWidth: 20,
-        cursor: "pointer",
+        cursor: 'pointer',
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseOut}
